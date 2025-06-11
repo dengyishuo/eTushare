@@ -1,0 +1,18 @@
+Package: eTushare
+Type: Package
+Title: A Lightweight Interface for Tushare Data in R
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Deng", "Yishuo",
+      email = "dengyishuo@163.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: A lightweight R package for seamless integration with Tushare can help users retrieve data from the Tushare API using R's syntax rules. This package simplifies the process of accessing financial data by abstracting the API's complexities, allowing users to focus on data analysis rather than API call mechanics. It adheres to R's programming conventions, ensuring compatibility with existing workflows and packages, and streamlines data retrieval through intuitive function interfaces tailored to Tushare's endpoints.
+Import: Tushare(>= 0.1.4), tibble(>= 3.2.1), utils(>= 4.5.0)
+Depends: R (>= 4.5.0), Tushare(>= 0.1.4), tibble(>= 3.2.1), utils(>= 4.5.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
