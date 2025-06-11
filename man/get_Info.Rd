@@ -5,6 +5,7 @@
 \title{Get Stock Basic Information}
 \usage{
 get_Info(
+  token = my_token,
   ts_code = "",
   market = "",
   list_status = "L",
@@ -14,6 +15,8 @@ get_Info(
 )
 }
 \arguments{
+\item{token}{Tushare API token,You can obtain it from Tushare Pro website after logging.}
+
 \item{ts_code}{Stock code (e.g. "000001.SZ" or "600519.SH"), default empty means get all stocks}
 
 \item{market}{Market type, optional "all"(no filter),"main"(Main Board),"gem"(GEM),"star"(STAR Market),"cdr"(CDR),"bse"(BSE), default "all" means no filter}

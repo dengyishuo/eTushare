@@ -1,6 +1,7 @@
 #' @title Get Stock Basic Information
 #' @description
 #' Retrieve stock basic information through Tushare API, including code, name, listing date, industry etc.
+#' @param token Tushare API token,You can obtain it from Tushare Pro website after logging.
 #' @param ts_code Stock code (e.g. "000001.SZ" or "600519.SH"), default empty means get all stocks
 #' @param market Market type, optional "all"(no filter),"main"(Main Board),"gem"(GEM),"star"(STAR Market),"cdr"(CDR),"bse"(BSE), default "all" means no filter
 #' @param list_status Listing status, "L"(Listed), "D"(Delisted), "P"(Suspended), default "L"
@@ -94,6 +95,11 @@ get_Info <- function(token = my_token,
                        "ts_code", "symbol", "name", "area",
                        "industry", "market", "list_date"
                      )) {
+  # Token validation
+  if (missing(token) || nchar(token) == 0) {
+    stop("Token is required. Please provide a valid Tushare API token.")
+  }
+
   # Parameter validation
   if (nchar(ts_code) > 0 && !grepl("\\.(SH|SZ)$", ts_code)) {
     stop("Invalid stock code format, must include .SH or .SZ suffix")
